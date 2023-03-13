@@ -1,8 +1,5 @@
 package ExcercicosLogicaProgramacao;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.Iterator;
 import java.util.Random;
 
 public class Ordenar100Aleatorios {
@@ -11,7 +8,7 @@ public class Ordenar100Aleatorios {
 		int vet[] = new int[100];
 		int aux = 0;
 		int i = 0;
-		int j = 0;
+
 		Random gerador = new Random();
 
 		System.out.println(" Valores desordenados ");
@@ -20,18 +17,21 @@ public class Ordenar100Aleatorios {
 			vet[i] = gerador.nextInt(99);
 			System.out.print(" " + vet[i]);
 		}
-
-		// ordenar
-
-		for (j = 0; j < vet[i]; j++) {
-			for (int k = 0; k < vet[i]; k++) {
-				if (vet[j] < vet[k]) {
+		System.out.println(" ");
+		System.out.println(" Valores ordenados ");
+		for (int k = 0; k < vet.length; k++) {
+			for (int j = 0; j < vet.length - 1; j++) {
+				if (vet[j] > vet[j + 1]) {
 					aux = vet[j];
-					vet[j] = vet[k];
-					vet[k] = aux;
+					vet[j] = vet[j + 1];
+					vet[j + 1] = aux;
 				}
+
 			}
-			System.out.println(aux + " ");
+		}
+		for (int q = 0; q < vet.length; q++) {
+			System.out.print(" " + vet[q]);
+
 		}
 	}
 }
